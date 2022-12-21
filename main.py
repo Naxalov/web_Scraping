@@ -15,12 +15,8 @@ html_data = """
 </html>
 """
 soup = BeautifulSoup(html_data, 'html.parser')
-title = soup.title
-print(title)
-print(title.name)
-print(title.string)
-# Get parent
-print(title.parent.name)
-# Get p tag
-p_tag = soup.p
-print(type(p_tag))
+
+# Get all the p tags
+p_tags = soup.find_all('p')
+for p in p_tags:
+    print(p.text)
